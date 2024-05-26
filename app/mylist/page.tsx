@@ -80,14 +80,14 @@ const RecipeList = () => {
                       <div className='my-4 flex flex-col md:flex-row items-center justify-evenly'>
                         {cart[selected]?.strSource && (
                           <Link href={cart[selected]?.strSource} target='_blank'
-                            className='py-2 px-4 border rounded-lg bg-lime-500 text-white dark:bg-teal-500 border-b-4 active:border-b-1 hover:border-b-lime-500 hover:bg-lime-300 hover:dark:bg-gray-500 hover:dark:border-b-teal-500'
+                            className='py-2 px-4 border rounded-lg bg-lime-500 text-white dark:bg-teal-500 border-b-4 active:border-b-1 hover:border-b-lime-500 hover:bg-lime-300 hover:dark:bg-gray-500 hover:dark:border-b-teal-500 w-[150px]'
                           >
                             Recipe Source
                           </Link>
                         )}
 
                         <Link href={`/recipe/${cart[selected]?.idMeal}`}
-                          className='py-2 px-4 border rounded-lg bg-teal-500 text-white dark:bg-indigo-500  border-b-4 active:border-b-1 hover:border-b-teal-500 hover:bg-teal-300 hover:dark:bg-gray-500 hover:dark:border-b-indigo-500'
+                          className='py-2 px-4 border rounded-lg bg-teal-500 text-white dark:bg-indigo-500  border-b-4 active:border-b-1 hover:border-b-teal-500 hover:bg-teal-300 hover:dark:bg-gray-500 hover:dark:border-b-indigo-500 w-[150px]'
                         >
                           Recipe Page
                         </Link>

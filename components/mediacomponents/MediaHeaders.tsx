@@ -21,7 +21,7 @@ const MediaHeaders = () => {
           <MediaMenu/>
         </SheetContent>
       </Sheet>
-
+      
       <MediaHeadersControls/>
     </header>
   )

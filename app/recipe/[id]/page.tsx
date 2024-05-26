@@ -49,7 +49,7 @@ const RecipePage = async ({ params } : Props) => {
         <div className=' border rounded-2xl py-2 px-4 bg-blue-500 text-white dark:bg-gray-500 flex flex-col md:flex-row items-center justify-between'>
           <div>
             <h2 className='text-2xl tracking-widest text-center'>{recipe.strMeal}</h2>
-            <p className='my-2 tracking-wide text-lg'>{recipe.strTags}</p>
+            <p className='my-2 tracking-wide md:text-lg '>{recipe.strTags}</p>
           </div>
           <AddCartButton id={params.id} variant='add'/>
         </div>
