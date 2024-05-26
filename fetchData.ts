@@ -1,5 +1,4 @@
 const baseUrl = 'https://www.themealdb.com/api/json/v1/1/'
-// https://www.themealdb.com/api/json/v1/1/filter.php?c=${params.category}
 
 export const getData = async (category: string) => {
   const res = await fetch(`${baseUrl}/filter.php?c=${category}`)
