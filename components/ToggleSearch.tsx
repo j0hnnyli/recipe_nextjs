@@ -18,7 +18,7 @@ const ToggleSearch = () => {
     router.push(`/search?search=${value.toLowerCase()}`)
     setShowSearch(false)
     setValue('')
-  }, [query, router])
+  }, [query, router, value])
 
   return (
     <>
@@ -44,7 +44,7 @@ const ToggleSearch = () => {
       ) :(
         <button 
           onClick={() => setShowSearch(true)}
-          className='w-10 flex items-center justify-center rounded-lg p-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-orange-500 mr-2'
+          className='w-10 flex items-center justify-center rounded-lg p-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-orange-500'
         >
           <MagnifyingGlassIcon/>
         </button>

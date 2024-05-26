@@ -42,6 +42,8 @@ const Headers = () => {
         <div className='flex items-center'>        
           <ToggleSearch/>
 
+          <ThemeButton/>
+          
           <Sheet>
             <SheetTrigger 
               className='w-10 flex items-center justify-center rounded-lg p-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-orange-500 mr-2'
@@ -53,8 +55,6 @@ const Headers = () => {
               <MiniList />                    
             </SheetContent>        
           </Sheet>
-
-          <ThemeButton/>
         </div>
       </div>
     </header>

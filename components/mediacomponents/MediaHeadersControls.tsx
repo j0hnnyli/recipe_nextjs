@@ -14,6 +14,8 @@ const MediaHeadersControls = () => {
     <div className='flex items-center'>
       <ToggleSearch/>
 
+      <ThemeButton/>
+      
       <Sheet>
         <SheetTrigger >
           <ListBulletIcon className='w-5'/>
@@ -23,8 +25,6 @@ const MediaHeadersControls = () => {
           <MiniList />                    
         </SheetContent>        
       </Sheet>
-
-      <ThemeButton/>
     </div>
   )
 }
