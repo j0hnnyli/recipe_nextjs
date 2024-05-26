@@ -1,10 +1,11 @@
 'use client'
-import { Suspense, useContext, useState } from 'react'
+import { useContext, useState } from 'react'
 import { cartContext } from '@/context/cartContext'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
 import { Button } from '@/components/ui/button'
+import Recipe from '@/types/recipeType'
 
 
 const RecipeList = () => {
@@ -28,7 +29,7 @@ const RecipeList = () => {
           </div>
         )}
         {
-          cart && cart.map((recipe: any, index: number) => (
+          cart && cart.map((recipe: Recipe, index: number) => (
             <div key={recipe.idMeal}
               className='py-4 border border-gray-200 shadow-md my-4 rounded-2xl px-6'
             >

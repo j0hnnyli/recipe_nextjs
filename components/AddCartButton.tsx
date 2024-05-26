@@ -6,6 +6,7 @@ import { PlusIcon } from '@heroicons/react/24/solid';
 import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import MiniList from './MiniList';
+import Recipe from '@/types/recipeType';
 
 interface Props {
   id: string;
@@ -18,7 +19,7 @@ const AddCartButton = ({ id, variant }: Props) => {
   const [isInCart, setIsInCart] = useState<boolean>(false);
 
   async function addCart(id: string, e : MouseEvent<HTMLButtonElement>){
-    const alreadyInCart = cart.find((item: any) => item.idMeal === id)
+    const alreadyInCart = cart.find((item: Recipe) => item.idMeal === id)
 
     if(alreadyInCart){
       e.preventDefault()
@@ -36,7 +37,7 @@ const AddCartButton = ({ id, variant }: Props) => {
       variant === 'quick' ? 'absolute z-60 right-4 bottom-3' : ''}>
       <Sheet >
         {variant === 'quick' && (
-          <SheetTrigger>
+          <SheetTrigger asChild={true}>
             <Button
               variant='quick'
               size='sm'
@@ -58,7 +59,7 @@ const AddCartButton = ({ id, variant }: Props) => {
         )}
 
         {variant === 'add' && (
-          <SheetTrigger>
+          <SheetTrigger asChild={true}>
             <Button variant='add' size='lg'
               onClick={(e) => addCart(id, e)}
               className='text-black'

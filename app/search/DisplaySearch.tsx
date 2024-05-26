@@ -1,6 +1,6 @@
 import React from 'react'
 import { getRecipeByName } from '@/fetchData'
-import Recipe from '@/recipeType'
+import Recipe from '@/types/recipeType'
 import Card from '@/components/Card'
 
 type Props = {

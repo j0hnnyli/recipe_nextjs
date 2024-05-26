@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useDebounce } from 'use-debounce'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid'
-import { useSearchParams } from 'next/navigation'
 
 type Props = {
   category: string;
@@ -21,7 +20,7 @@ const SearchBar = ({ category }: Props) =>  {
     }else{
       router.push(`/${category}?search=${value.toLowerCase()}`)    
     }
-  }, [query, router])
+  }, [query, router, value, category])
 
   return (
     <div className='flex items-center border border-black dark:border-gray-500 rounded-2xl mt-3 md:mt-0 '>

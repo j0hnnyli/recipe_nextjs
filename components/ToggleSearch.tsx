@@ -18,7 +18,8 @@ const ToggleSearch = () => {
     router.push(`/search?search=${value.toLowerCase()}`)
     setShowSearch(false)
     setValue('')
-  }, [query, router, value])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [query, router])
 
   return (
     <>

@@ -2,7 +2,7 @@ import Card from "@/components/Card";
 import { getData } from "@/fetchData";
 import SearchBar from "../SearchBar";
 import CategoryFilterSelect from '@/components/mediacomponents/CategoryFilterSelect'
-import Recipe from "@/recipeType";
+import Recipe from "@/types/recipeType";
 
 type Props = {
   params: {
@@ -12,13 +12,11 @@ type Props = {
 };
 
 const PastaPage = async ({ params, searchParams }: Props) => {
-  const { meals: recipes }: { meals: Recipe[] } = await getData(
-    `https://www.themealdb.com/api/json/v1/1/filter.php?c=${params.category}`
-  );
+  const { meals: recipes }: { meals: Recipe[] } = await getData(params.category);
 
   const searchTerm = searchParams.search ? String(searchParams.search) : ""
 
-  const filteredRecipes = recipes.filter((recipe: any) => {
+  const filteredRecipes = recipes.filter((recipe: Recipe) => {
     if (
       recipe.strMeal
         .toLowerCase()

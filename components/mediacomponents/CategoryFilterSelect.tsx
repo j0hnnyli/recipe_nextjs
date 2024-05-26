@@ -1,4 +1,4 @@
-import { getData } from '@/fetchData'
+import { getCategories } from '@/fetchData'
 import Link from 'next/link'
 import { ChevronDownIcon } from '@heroicons/react/24/solid'
 import {
@@ -7,9 +7,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
+import Category from '@/types/categoryType'
 
 const CategoryFilterSelect = async () => {
-  const allCategories = await getData("https://www.themealdb.com/api/json/v1/1/categories.php")
+  const allCategories = await getCategories("categories.php")
 
 
   return (
@@ -29,7 +30,7 @@ const CategoryFilterSelect = async () => {
 
     
         <DropdownMenuContent className='overflow-auto h-[350px]'>
-          {allCategories.categories.map((category: any) => (
+          {allCategories.categories.map((category: Category) => (
             <DropdownMenuItem key={category.idCategory}>
               <Link href={`/${category.strCategory}`}>
                 {category.strCategory} 

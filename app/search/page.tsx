@@ -13,7 +13,7 @@ const Search = async ({ searchParams }: Props) => {
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row items-center">
+      <div className="flex flex-col lg:flex-row items-center justify-center">
         <h2 className="text-2xl"> 
           Search :
         </h2>
