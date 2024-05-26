@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { Button } from './ui/button'
 import { SheetClose } from '@/components/ui/sheet'
 import { useRouter } from 'next/navigation'
+import Recipe from '@/types/recipeType'
 
 const MiniList = () => {
   const { cart, handleDelete } = useContext(cartContext);
@@ -27,7 +28,7 @@ const MiniList = () => {
       </div>
 
       <div className='overflow-auto h-[90%]'>
-        { cart && cart.map((recipe: any) => (
+        { cart && cart.map((recipe: Recipe) => (
           <div key={recipe.idMeal} 
             className='flex flex-col lg:flex-row items-center justify-center w-full my-5 p-2'
           >

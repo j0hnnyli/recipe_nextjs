@@ -3,7 +3,7 @@ import Link from "next/link";
 import AddCartButton from "@/components/AddCartButton";
 import Image from "next/image";
 import { ArrowLongRightIcon } from '@heroicons/react/24/solid'
-import Recipe from "@/recipeType";
+import Recipe from "@/types/recipeType";
 
 import {
   Carousel,
