@@ -18,13 +18,15 @@ const Card = ({ id, title, imageSrc }: Props) => {
             alt={title}
             height={300}
             width={300}
-            className="rounded-2xl hover:border-blue-500 hover:dark:border-gray-500 hover:border-2 hover:p-1"
+            className="rounded-2xl hover:border-orange-500 hover:dark:border-gray-500 hover:border-2 hover:p-1"
           />
         </Link>
         <AddCartButton id={id} variant='quick'/>
       </div>
 
-      <h1 className="w-[90%] mx-auto text-center">{title}</h1>
+      <h1 className="w-[90%] mx-auto text-center">
+        {title.length > 20 ? title.slice(0, 18) + '...' : title }
+      </h1>
     </div>
   );
 };

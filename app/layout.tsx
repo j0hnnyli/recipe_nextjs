@@ -26,7 +26,7 @@ export default function RootLayout({
           <CartProvider>
             <MediaHeaders/>
             <Headers />
-            <main className="mt-12 lg:mt-32">
+            <main className="mt-16 lg:mt-32">
               {children}
             </main>
             <ScrollTopButton/>

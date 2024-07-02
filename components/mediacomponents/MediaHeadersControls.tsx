@@ -1,6 +1,5 @@
 import React from 'react'
 import ToggleSearch from '../ToggleSearch'
-import ThemeButton from '../ThemeButton'
 import MiniList from '../MiniList'
 import { ListBulletIcon } from '@heroicons/react/24/solid'
 import {
@@ -13,8 +12,6 @@ const MediaHeadersControls = () => {
   return (
     <div className='flex items-center'>
       <ToggleSearch/>
-
-      <ThemeButton/>
       
       <Sheet>
         <SheetTrigger >

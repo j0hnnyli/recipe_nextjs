@@ -17,7 +17,7 @@ const StickyCategoriesLinks = ({ title, href }: Props) => {
 
   
   return (
-    <li className={`mb-2 ${selected && 'dark:bg-gray-500 bg-blue-500 text-white'} rounded-2xl`}>
+    <li className={`mb-2 ${selected && 'dark:bg-gray-500 bg-orange-500 text-white'} rounded-2xl`}>
       <Link 
         href={href} 
         className='w-full p-2 rounded-xl flex iems-center justify-between hover:bg-blue-200 hover:dark:bg-gray-700'
