@@ -28,7 +28,7 @@ const ScrollTopButton = () => {
       {show ? (
         <button 
           onClick={scrollTop}
-          className='rounded-full bg-black text-white dark:bg-gray-500 hover:bg-slate-700 hover:dark:bg-gray-900  bottom-7 right-7 md:left-7 flex flex-col items-center justify-center py-2 px-3 fixed'
+          className='rounded-full bg-black text-white dark:bg-gray-500 hover:bg-slate-700 hover:dark:bg-gray-900  bottom-7 right-7 flex flex-col items-center justify-center py-2 px-3 fixed'
         >
           <ArrowUpIcon className='w-5 h-5 text-white'/>
           <p className='text-sm'> Top </p>        
