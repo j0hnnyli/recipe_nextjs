@@ -32,7 +32,7 @@ const ToggleSearch = () => {
             <input type="text" 
               value={value}
               onChange={(e) => setValue(e.target.value)}
-              className='p-2 rounded-2xl lg:w-[300px]'
+              className='px-2 py-1 rounded-2xl lg:w-[300px]'
             />
           </div>
           <button

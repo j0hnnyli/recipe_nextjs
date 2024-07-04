@@ -5,10 +5,10 @@ import AnimateReveal from "@/components/AnimateReveal";
 export default async function Home() {
   return (
     <>
-      <section className="h-[90vh] flex justify-center items-center mt-10">
-        <div className="flex flex-col lg:flex-row justify-evenly w-full h-full items-center ">  
+      <section className="lg:h-[90vh] flex justify-center items-center mt-10">
+        <div className="flex flex-col lg:flex-row justify-evenly items-center ">  
 
-          <div className="lg:w-[50%] h-full flex items-center justify-center p-2">
+          <div className="lg:w-[50%] flex items-center justify-center p-2">
 
             <div className="grid grid-cols-2 gap-2">
               <div className="gap-2 flex items-center justify-center flex-col mt-10">
