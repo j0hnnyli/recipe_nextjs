@@ -1,19 +1,15 @@
-import React from 'react'
-import { Skeleton } from '@/components/ui/skeleton'
+import React from 'react';
+import { Loader } from 'lucide-react';
+import { FiLoader } from "react-icons/fi";
 
-const lodaingBoxes = new Array(25).fill(null);;
+
 
 const loading = () => {
   return (
     <div 
-      className="flex flex-wrap gap-4 my-10 mx-auto w-full justify-center px-7 mt-10"
+      className="flex items-center justify-center h-[80vh] text-9xl"
     >
-      {lodaingBoxes.map((index) => (
-        <Skeleton 
-          key={index}
-          className='w-[220px] h-[220px] rounded-2xl'
-        />
-      ))}
+      <FiLoader className='text-8xl text-orange-500 dark:text-white animate-spin'/>
     </div>
   )
 }

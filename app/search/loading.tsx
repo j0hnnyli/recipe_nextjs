@@ -1,17 +1,10 @@
 import React from 'react'
-import { Skeleton } from '@/components/ui/skeleton'
-
-const loadingBoxes = Array(25).fill(null)
+import { FiLoader } from "react-icons/fi";
 
 const loading = () => {
   return (
-    <div className='flex flex-wrap justify-center items-center gap-4 my-5'>
-      {loadingBoxes.map((index) => (
-        <Skeleton 
-          key={index}
-          className='w-[220px] h-[220px] rounded-2xl'
-        />
-      ))}
+    <div className='flex justify-center items-center h-[80vh]'>
+      <FiLoader className='text-orange-500 dark:text-white animate-spin text-8xl'/>
     </div>
   )
 }
