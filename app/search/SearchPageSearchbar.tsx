@@ -23,8 +23,8 @@ const SearchPageSearchbar = ({ defaultvalue} : Props) => {
     <input type="text" 
       onChange={(e) => setValue(e.target.value)}
       defaultValue={defaultvalue}
-      className='rounded-2xl py-2 px-4 mx-2 w-full lg:w-[50%] border-black border dark:border-gray-500'
       placeholder='Search for recipes...'
+      className='bg-black py-2 px-4 w-full lg:w-[50%] border-black border-b dark:border-b-gray-500 outline-none mx-auto block'
     />
   )
 

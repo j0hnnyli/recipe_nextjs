@@ -31,7 +31,7 @@ const RecommendRecipes = async ({ area }: Props) => {
           dragFree: true,
           slidesToScroll: 2
         }}
-        className='w-[70%] mx-auto lg:w-full'
+        className='w-full mx-auto lg:w-full'
       >
         <div className="lg:hidden flex items-center mx-auto justify-center">
           <h2>Swipe</h2>
@@ -41,7 +41,7 @@ const RecommendRecipes = async ({ area }: Props) => {
           {recommendRecipes && recommendRecipes.map((recommend: Recipe) => (
             <CarouselItem
               key={recommend.idMeal}
-              className="lg:basis-1/4 2xl:basis-1/6 mx-auto"
+              className="basis-1/2 md:basis-1/3 lg:basis-1/4 2xl:basis-1/6 mx-auto"
             >
               <div className="relative" >
                 <Link href={`/recipe/${recommend.idMeal}`}>

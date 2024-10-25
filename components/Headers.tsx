@@ -1,19 +1,20 @@
-import { ListBulletIcon} from '@heroicons/react/24/solid';
+import { GiCookingPot } from "react-icons/gi";
 import ThemeButton from './ThemeButton'
 import Logo from '../public/recipelogo.jpeg'
 import Link from 'next/link'
 import Image from 'next/image';
-import ToggleSearch from './ToggleSearch';
+import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import MiniList from './MiniList';
 import { 
   Sheet, 
   SheetTrigger,
   SheetContent,
 } from './ui/sheet';
+import MiniListLength from "./MiniListLength";
 
 const Headers = () => {
   return (
-    <header className='hidden lg:inline fixed w-full top-0 z-30 bg-white dark:bg-slate-800'>
+    <header className='hidden md:inline fixed w-full top-0 z-30 bg-white dark:bg-slate-800'>
       <div className='flex items-center justify-between p-4  max-w-[1800px] mx-auto relative'>
         <div className='flex items-center justify-between w-[55%]'>
           <div>
@@ -41,16 +42,23 @@ const Headers = () => {
           </div>
         </div>
 
-        <div className='flex items-center absolute right-0'>        
-          <ToggleSearch/>
+        <div className='flex items-center'>        
+          <Link href="/search"
+            className="hover:bg-zinc-500 hover:text-orange-500 mr-2 p-2 rounded-lg border-none"
+          >
+            <MagnifyingGlassIcon className='w-5'/>
+          </Link>
 
           <ThemeButton/>
           
           <Sheet>
             <SheetTrigger 
-              className='w-10 flex items-center justify-center rounded-lg p-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-orange-500 mr-2'
-            >
-              <ListBulletIcon className='w-10'/>
+              className='w-10 flex items-center justify-center rounded-lg p-2 hover:bg-zinc-500 hover:text-orange-500 mr-2'
+            > 
+              <div className="relative">
+                <GiCookingPot className='text-2xl'/>
+                <MiniListLength/>
+              </div>
             </SheetTrigger>  
             
             <SheetContent>

@@ -5,26 +5,27 @@ import { cartContext } from '@/context/cartContext'
 import Image from 'next/image'
 import { Button } from './ui/button'
 import { SheetClose } from '@/components/ui/sheet'
-import { useRouter } from 'next/navigation'
 import Recipe from '@/types/recipeType'
+import Link from 'next/link'
 
 const MiniList = () => {
   const { cart, handleDelete } = useContext(cartContext);
-  const router = useRouter();
 
 
   return (
     <>
       <div className='flex items-center justify-center flex-col my-5'>
         <h2 className='text-center text-xl'>
-          Recipe List: {cart.length}
+          My Recipe List: {cart.length}
         </h2>
-        <SheetClose 
-          onClick={() => router.push('/mylist')}
-          className='border py-2 px-4 bg-blue-500 text-white dark:bg-gray-500 hover:bg-gray-500 hover:dark:bg-white hover:dark:text-gray-500 rounded-2xl hidden lg:inline'
-        >
-          Go to List Page 
-        </SheetClose>
+        <Link href="/mylist">
+          <SheetClose
+            className='py-2 px-4 text-white inline hover:underline hover:text-orange-500'
+          >
+            View All
+          </SheetClose>
+        </Link>
+        <div className='h-1 w-[80%] mx-auto bg-orange-500 rounded-xl'></div>
       </div>
 
       <div className='overflow-auto h-[90%]'>
@@ -39,12 +40,13 @@ const MiniList = () => {
             />
 
             <div className='lg:w-[50%] text-center flex flex-col items-center '> 
-              <SheetClose
-                onClick={() => router.push(`/recipe/${recipe.idMeal}`)}
-                className='text-lg hover:text-blue-500 hover:underline dark:hover:text-gray-500 '
-              >
-                {recipe.strMeal}
-              </SheetClose>             
+              <Link href={`/recipe/${recipe.idMeal}`}>
+                <SheetClose
+                  className='text-lg hover:text-orange-500 hover:underline '
+                >
+                  {recipe.strMeal}
+                </SheetClose>             
+              </Link>
                     
               <Button size='lg' variant='danger'
                 onClick={() => handleDelete(recipe.idMeal)}
