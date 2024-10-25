@@ -23,15 +23,15 @@ const SearchBar = ({ category }: Props) =>  {
   }, [query, router, value, category])
 
   return (
-    <div className='flex items-center border border-black dark:border-gray-500 rounded-2xl mt-3 md:mt-0 '>
-      <div className='w-9 p-1 px-2 rounded-tl-2xl rounded-bl-2xl'>
+    <div className='flex items-center border-b border-b-black dark:border-b-gray-500 mt-3 md:mt-0'>
+      <div className='w-9 p-1 px-2'>
         <MagnifyingGlassIcon/>
       </div>
       <input type="text" 
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder='Search . . .'
-        className='w-[$350px] py-2 px-4  rounded-tr-2xl rounded-br-2xl outline-none'
+        className='py-2 px-4 outline-none border-none bg-white dark:bg-black '
       />
     </div>
   )

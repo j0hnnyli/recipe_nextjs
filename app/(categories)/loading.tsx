@@ -1,5 +1,4 @@
 import React from 'react';
-import { Loader } from 'lucide-react';
 import { FiLoader } from "react-icons/fi";
 
 

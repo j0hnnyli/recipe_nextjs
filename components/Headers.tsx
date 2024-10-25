@@ -1,15 +1,16 @@
-import { ListBulletIcon} from '@heroicons/react/24/solid';
+import { GiCookingPot } from "react-icons/gi";
 import ThemeButton from './ThemeButton'
 import Logo from '../public/recipelogo.jpeg'
 import Link from 'next/link'
 import Image from 'next/image';
-import ToggleSearch from './ToggleSearch';
+import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import MiniList from './MiniList';
 import { 
   Sheet, 
   SheetTrigger,
   SheetContent,
 } from './ui/sheet';
+import MiniListLength from "./MiniListLength";
 
 const Headers = () => {
   return (
@@ -41,16 +42,23 @@ const Headers = () => {
           </div>
         </div>
 
-        <div className='flex items-center absolute right-0'>        
-          <ToggleSearch/>
+        <div className='flex items-center'>        
+          <Link href="/search"
+            className="hover:bg-zinc-500 hover:text-orange-500 mr-2 p-2 rounded-lg border-none"
+          >
+            <MagnifyingGlassIcon className='w-5'/>
+          </Link>
 
           <ThemeButton/>
           
           <Sheet>
             <SheetTrigger 
-              className='w-10 flex items-center justify-center rounded-lg p-2 hover:bg-zinc-100 dark:hover:bg-zinc-700 hover:text-orange-500 mr-2'
-            >
-              <ListBulletIcon className='w-10'/>
+              className='w-10 flex items-center justify-center rounded-lg p-2 hover:bg-zinc-500 hover:text-orange-500 mr-2'
+            > 
+              <div className="relative">
+                <GiCookingPot className='text-2xl'/>
+                <MiniListLength/>
+              </div>
             </SheetTrigger>  
             
             <SheetContent>

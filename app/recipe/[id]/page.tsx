@@ -3,7 +3,8 @@ import ShowMoreOrLess from '../../../components/ShowMoreOrLess'
 import RecommendRecipes from '../RecommendRecipes'
 import Image from 'next/image'
 import AddCartButton from '@/components/AddCartButton'
-import BreadCrumb from "@/components/BreadCrumb"
+import BreadCrumb from "@/components/BreadCrumb"  
+import VideoComponent from "../VideoComponent"
 
 type Props = {
   params : {
@@ -12,10 +13,10 @@ type Props = {
 }
 
 const RecipePage = async ({ params } : Props) => {
-  const { meals } = await getSingleRecipe(params.id)
+  const { meals }  = await getSingleRecipe(params.id)
   const recipe = meals[0];
   const recipeKeys = Object.keys(recipe);
-  
+
   return (
     <div>
       <BreadCrumb 
@@ -60,6 +61,12 @@ const RecipePage = async ({ params } : Props) => {
           </span>
           <ShowMoreOrLess paragraph={recipe.strInstructions}/>
         </p>
+        
+        {recipe.strYoutube.length > 0 && (
+          <VideoComponent
+            url={recipe.strYoutube}
+          />
+        )}
 
         <div>
           <h2 className='text-4xl mt-5 tracking-widest text-blue-500 dark:text-gray-500'>

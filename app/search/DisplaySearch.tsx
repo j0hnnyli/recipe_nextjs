@@ -8,31 +8,30 @@ type Props = {
 }
 
 const DisplaySearch = async ({query} : Props) => {
-  const { meals } = await getRecipeByName(query.toLowerCase());
+  const value = query ? query.toLowerCase() : "";
+  const { meals } = await getRecipeByName(value);
 
   return (
     <>
-      <h2 className='text-center text-lg my-5'>
-        Results: {meals?.length}
-      </h2>
-      {(query.length === 0 || !meals) ? (
-        <div className='text-center mt-10'>
-          <h1 className='text-2xl text-red-500'>
-            No Recipes Matches for { query.length === 0 ? 'Search' : query }
-          </h1>
-        </div>
-      ) : (
-        <div className='flex flex-wrap gap-4 pl-5 md:pl-0 justify-center mb-5'>
-          {meals?.map((recipe: Recipe) => (
-            <Card 
-              key={recipe.idMeal}
-              title={recipe.strMeal}
-              imageSrc={recipe.strMealThumb}
-              id={recipe.idMeal}
-            /> 
-          ))}
-        </div>   
+      {value.length > 0 && (
+        <>
+          <h2 className='text-center text-lg my-5'>
+            Results: {meals?.length}
+          </h2>
+
+          <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5 my-5 p-2'>
+            {meals?.map((recipe: Recipe) => (
+              <Card 
+                key={recipe.idMeal}
+                title={recipe.strMeal}
+                imageSrc={recipe.strMealThumb}
+                id={recipe.idMeal}
+              /> 
+            ))}
+          </div>   
+        </>
       )}
+      
     </>
   )
 }

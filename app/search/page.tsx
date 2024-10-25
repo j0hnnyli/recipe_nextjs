@@ -8,18 +8,12 @@ type Props = {
   };
 };
 
-const Search = async ({ searchParams }: Props) => {
-  const { search } = searchParams
-
+const Search = ({ searchParams }: Props) => {
+  const { search } = searchParams;
+  
   return (
     <>
-      <div className="flex flex-col lg:flex-row items-center justify-center">
-        <h2 className="text-2xl"> 
-          Search :
-        </h2>
-        <SearchPageSearchbar defaultvalue={search}/>
-      </div>
-
+      <SearchPageSearchbar defaultvalue={search}/>
       <DisplaySearch query={search}/>
     </>
   );

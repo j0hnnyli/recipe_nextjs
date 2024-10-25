@@ -10,7 +10,7 @@ type Props = {
 
 const Card = ({ id, title, imageSrc }: Props) => {
   return (
-    <div className="w-[200px] md:mr-[10px] h-full">
+    <div className="w-full md:mr-[10px] h-full">
       <div className="relative">
         <Link href={`/recipe/${id}`} className="bg-black relative">
           <Image
