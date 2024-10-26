@@ -14,7 +14,7 @@ import MiniListLength from "./MiniListLength";
 
 const Headers = () => {
   return (
-    <header className='hidden md:inline fixed w-full top-0 z-30 bg-white dark:bg-slate-800'>
+    <header className='hidden md:inline fixed w-full top-0 z-50 bg-gray-200 dark:bg-gray-900 h-36'>
       <div className='flex items-center justify-between p-4  max-w-[1800px] mx-auto relative'>
         <div className='flex items-center justify-between w-[55%]'>
           <div>

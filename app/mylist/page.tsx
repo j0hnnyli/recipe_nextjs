@@ -11,7 +11,7 @@ const RecipeList = async () => {
           <span>
             <GiWok className="text-orange-500 text-3xl mr-2" />
           </span>
-          <span>My Recipe List</span>
+          <span className="text-black dark:text-white">My Recipe List</span>
         </h2>
         <div className="w-[80%] mx-auto bg-orange-500 h-1 rounded-2xl my-5"></div>
       </div>

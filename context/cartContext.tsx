@@ -1,17 +1,16 @@
 'use client'
 import { getSingleRecipe } from "@/fetchData";
+import Recipe from "@/types/recipeType";
 import { createContext, ReactNode, useState, useEffect } from "react";
 
 const cartContext = createContext<any>(null)
 
 function CartProvider({children} : {children: ReactNode}){
   const storageCart =typeof window !== 'undefined'&&  JSON.parse(localStorage.getItem("cart") || '[]')
-  const [cart, setCart] = useState<any>(storageCart)
+  const [cart, setCart] = useState<Recipe[]>(storageCart)
   
-  async function handleAddCart(id: string) {
-    const recipe = await getSingleRecipe(id)
-
-    setCart([recipe.meals[0], ...cart])
+  async function handleAddCart(recipe: Recipe) {
+    setCart([recipe, ...cart])
   }
   
   function handleDelete(id: string){ 

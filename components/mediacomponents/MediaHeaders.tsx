@@ -11,7 +11,7 @@ import MediaHeadersControls from './MediaHeadersControls'
 const MediaHeaders = () => {
   return (
     <header
-      className='fixed top-0 w-full md:hidden py-3 px-4 flex items-center justify-between bg-white dark:bg-slate-800 z-50'
+      className='fixed top-0 w-full md:hidden py-3 px-4 flex items-center justify-between bg-gray-200 dark:bg-slate-800 z-50 h-16'
     >
       <Sheet>
         <SheetTrigger>

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.text-script {
+  font-family: var(--text-script);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

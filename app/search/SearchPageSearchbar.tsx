@@ -16,7 +16,7 @@ const SearchPageSearchbar = ({ defaultvalue} : Props) => {
   useEffect(() => {
     if(!value) return;
     
-    router.push(`/search?search=${value.toLowerCase()}`)
+    router.push(`/search?search=${query.toLowerCase()}`)
   } ,[query, value, router])
 
   return (
@@ -24,7 +24,7 @@ const SearchPageSearchbar = ({ defaultvalue} : Props) => {
       onChange={(e) => setValue(e.target.value)}
       defaultValue={defaultvalue}
       placeholder='Search for recipes...'
-      className='bg-black py-2 px-4 w-full lg:w-[50%] border-black border-b dark:border-b-gray-500 outline-none mx-auto block'
+      className='py-2 px-4 w-full lg:w-[70%] bg-gray-200 dark:bg-gray-900 border-b border-b-orange-500 dark:border-b-gray-200 outline-none mx-auto block text-center'
     />
   )
 

@@ -50,6 +50,16 @@ export const getRecipeByName = async (name: string) => {
   return recipes
 }
 
+export const getAreas = async () => {
+  const res = await fetch(`${baseUrl}/list.php?a=list`);
+  
+  if(!res.ok) throw new Error('fetching areas failed');
+
+  const data = await res.json();
+
+  return data;
+}
+
 export const wait = async (time: number): Promise<void> => {
   return new Promise((resolve) => setTimeout(() => {resolve()}, time))
 }
