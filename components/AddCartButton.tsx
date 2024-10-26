@@ -11,9 +11,10 @@ import Recipe from '@/types/recipeType';
 interface Props {
   id: string;
   variant: string;
+  recipe: Recipe;
 }
 
-const AddCartButton = ({ id, variant }: Props) => {
+const AddCartButton = ({ id, variant, recipe }: Props) => {
   const { cart, handleAddCart } = useContext(cartContext);
   const [showAdd, setShowAdd] = useState<boolean>(false);
   const [isInCart, setIsInCart] = useState<boolean>(false);
@@ -29,7 +30,7 @@ const AddCartButton = ({ id, variant }: Props) => {
       return;
     }
  
-    await handleAddCart(id);
+    handleAddCart(recipe);
   }
 
   return (
@@ -52,7 +53,7 @@ const AddCartButton = ({ id, variant }: Props) => {
                   <p className='text-md'>
                     {isInCart ? 'Already in List' : 'QuickAdd'}
                   </p>: 
-                  <PlusIcon />
+                  <PlusIcon className=''/>
                 }
             </Button>      
           </SheetTrigger>

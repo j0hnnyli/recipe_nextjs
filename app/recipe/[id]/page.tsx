@@ -52,7 +52,7 @@ const RecipePage = async ({ params } : Props) => {
             <h2 className='text-2xl tracking-widest text-center'>{recipe.strMeal}</h2>
             <p className='my-2 tracking-wide md:text-lg '>{recipe.strTags}</p>
           </div>
-          <AddCartButton id={params.id} variant='add'/>
+          <AddCartButton id={params.id} variant='add' recipe={recipe}/>
         </div>
         
         <p className='mt-5'>
@@ -61,36 +61,38 @@ const RecipePage = async ({ params } : Props) => {
           </span>
           <ShowMoreOrLess paragraph={recipe.strInstructions}/>
         </p>
-        
-        {recipe.strYoutube.length > 0 && (
-          <VideoComponent
-            url={recipe.strYoutube}
-          />
-        )}
 
-        <div>
-          <h2 className='text-4xl mt-5 tracking-widest text-blue-500 dark:text-gray-500'>
-            Ingredients
-          </h2>
-          <ul className='my-3 pl-4'>
-            {recipeKeys.map((key: string) => {
-              if (key.includes('strMeasure')) {
-                const measurement = recipe[key];
-                const ingredientKey = key.replace('strMeasure', 'strIngredient');
-                const ingredient = recipe[ingredientKey];
-            
-                if (measurement && ingredient) {
-                  return (
-                    <li key={key} 
-                      className='my-1 list-disc'
-                    >
-                      {measurement} - {ingredient}
-                    </li>
-                  );
+        <div className="flex flex-col-reverse md:flex-row md:items-center justify-between w-full"> 
+          <div>
+            <h2 className='text-4xl mt-5 tracking-widest text-blue-500 dark:text-gray-500'>
+              Ingredients
+            </h2>
+            <ul className='my-3 pl-4'>
+              {recipeKeys.map((key: string) => {
+                if (key.includes('strMeasure')) {
+                  const measurement = recipe[key];
+                  const ingredientKey = key.replace('strMeasure', 'strIngredient');
+                  const ingredient = recipe[ingredientKey];
+              
+                  if (measurement && ingredient) {
+                    return (
+                      <li key={key} 
+                        className='my-1 list-disc'
+                      >
+                        {measurement} - {ingredient}
+                      </li>
+                    );
+                  }
                 }
-              }
-            })}
-          </ul>
+              })}
+            </ul>
+          </div>
+          
+          {recipe.strYoutube.length > 0 && (
+            <VideoComponent
+              url={recipe.strYoutube}
+            />
+          )}
         </div>
 
       </div>

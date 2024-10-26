@@ -4,6 +4,14 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useDebounce } from 'use-debounce'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 type Props = {
   category: string;
@@ -31,7 +39,7 @@ const SearchBar = ({ category }: Props) =>  {
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder='Search . . .'
-        className='py-2 px-4 outline-none border-none bg-white dark:bg-black '
+        className='py-2 px-4 outline-none border-none bg-gray-200 dark:bg-gray-900 '
       />
     </div>
   )

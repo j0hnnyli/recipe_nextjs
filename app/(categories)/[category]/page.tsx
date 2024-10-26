@@ -34,6 +34,8 @@ const PastaPage = async ({ params, searchParams }: Props) => {
             {params.category[0].toUpperCase() + params.category.slice(1)} 
           </h1>
         </div>
+
+        
         <SearchBar category={params.category} />
         <CategoryFilterSelect/>
       </div>
@@ -41,6 +43,7 @@ const PastaPage = async ({ params, searchParams }: Props) => {
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5 my-5 p-2">
         {filteredRecipes.map((recipe: Recipe) => (
           <Card
+            recipe={recipe}
             key={recipe.idMeal}
             title={recipe.strMeal}
             imageSrc={recipe.strMealThumb}

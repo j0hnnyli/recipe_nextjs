@@ -9,19 +9,20 @@ type Props = {
 
 const DisplaySearch = async ({query} : Props) => {
   const value = query ? query.toLowerCase() : "";
-  const { meals } = await getRecipeByName(value);
+  const { meals } : { meals: Recipe[]} = await getRecipeByName(value);
 
   return (
     <>
       {value.length > 0 && (
         <>
           <h2 className='text-center text-lg my-5'>
-            Results: {meals?.length}
+            Results: {meals?.length ? meals.length : 0}
           </h2>
 
           <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5 my-5 p-2'>
             {meals?.map((recipe: Recipe) => (
               <Card 
+                recipe={recipe}
                 key={recipe.idMeal}
                 title={recipe.strMeal}
                 imageSrc={recipe.strMealThumb}

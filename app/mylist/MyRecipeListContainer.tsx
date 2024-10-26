@@ -11,7 +11,7 @@ const MyRecipeListContainer = () => {
   const {
     cart,
     handleDelete,
-  }: { cart: Recipe[]; handleDelete: (id: number) => void } =
+  }: { cart: Recipe[]; handleDelete: (id: string) => void } =
     useContext(cartContext);
   const [mounted, setMounted] = useState(false);
 
@@ -31,7 +31,10 @@ const MyRecipeListContainer = () => {
               height={200}
               className="rounded-2xl"
             />
-            <button className='absolute bottom-5 right-5 p-2 rounded-full bg-black'>
+            <button 
+              onClick={() => handleDelete(meal.idMeal)}
+              className='absolute bottom-5 right-5 p-2 rounded-full bg-black'
+            >
               <FaTrash className='text-red-500  hover:text-red-800'/>
             </button>
           </div>

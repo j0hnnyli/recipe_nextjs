@@ -20,7 +20,7 @@ const MiniList = () => {
         </h2>
         <Link href="/mylist">
           <SheetClose
-            className='py-2 px-4 text-white inline hover:underline hover:text-orange-500'
+            className='py-2 px-4 inline hover:underline hover:text-orange-500 dark:hover:text-gray-500'
           >
             View All
           </SheetClose>
