@@ -89,9 +89,11 @@ const RecipePage = async ({ params } : Props) => {
           </div>
           
           {recipe.strYoutube.length > 0 && (
-            <VideoComponent
-              url={recipe.strYoutube}
-            />
+            <div className=" md:w-[50%] flex items-center justify-center">
+                <VideoComponent
+                  url={recipe.strYoutube}
+                />
+            </div>
           )}
         </div>
 

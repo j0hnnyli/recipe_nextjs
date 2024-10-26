@@ -17,7 +17,7 @@ const VideoComponent = ({url} : Props) => {
   return (
     <>
       {mounted && (
-        <div className='w-full md:w-[400px] md:max-w-[50%] h-[200px] border-white my-5'>
+        <div className='w-full h-[250px] my-5'>
           <ReactPlayer
             controls={true}
             url={url}

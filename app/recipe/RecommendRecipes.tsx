@@ -43,17 +43,16 @@ const RecommendRecipes = async ({ area }: Props) => {
               key={recommend.idMeal}
               className="basis-1/2 md:basis-1/3 lg:basis-1/4 2xl:basis-1/6 mx-auto"
             >
-              <div className="relative" >
+              <div className="">
                 <Link href={`/recipe/${recommend.idMeal}`}>
                   <Image
                     src={recommend.strMealThumb}
                     alt={recommend.strMeal}
                     width={210}
                     height={210}
-                    className="w-full h-full rounded-2xl"
+                    className="w-full h-full rounded-2xl hover:border-blue-500 hover:dark:border-gray-500 hover:border-2 hover:p-1"
                   />
                 </Link>
-                <AddCartButton id={recommend.idMeal} variant='quick'/>
               </div>
               <h2 className="text-center">{recommend.strMeal}</h2>
             </CarouselItem>

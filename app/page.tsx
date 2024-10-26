@@ -28,8 +28,8 @@ const popularCategories = [
 
 export default async function Home() {
   return (
-    <>
-      <div className="h-[70vh] max-w-[1800px] max-h-[1000px] mx-auto relative">
+    <div className="max-w-[1800px] mx-auto">
+      <div className="h-[70vh] max-h-[1000px] mx-auto relative">
         <Image
           src='/showcase.jpg'
           alt='showcase'
@@ -54,7 +54,7 @@ export default async function Home() {
         </div>
       </div>
       
-      <div className="lg:w-[80%] mx-auto p-5">
+      <div className="lg:w-[90%] mx-auto p-5">
         <h2 
           className="text-left tracking-widest font-bold text-3xl border-b text-orange-500 border-orange-500 dark:text-gray-500 dark:border-gray-500"
         > 
@@ -66,9 +66,9 @@ export default async function Home() {
       </div>
       
       
-      <div className="lg:w-[80%] mx-auto p-5">
+      <div className="lg:w-[90%] mx-auto p-5">
         <h2 className="text-xl tracking-widest text-orange-500 dark:text-gray-500 font-bold">Popular Categories:</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 mt-2">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 mt-2">
           {popularCategories.map((category) => (
             <Link href={`/${category.title}`} key={category.title}
               className="my-1 p-1 rounded-xl hover:bg-gray-400 hover:dark:bg-gray-500"
@@ -160,6 +160,6 @@ export default async function Home() {
 
         </div>
       </section> */}
-    </>
+    </div>
   );
 }

@@ -11,7 +11,6 @@ import Link from 'next/link'
 const MiniList = () => {
   const { cart, handleDelete } = useContext(cartContext);
 
-
   return (
     <>
       <div className='flex items-center justify-center flex-col my-5'>
