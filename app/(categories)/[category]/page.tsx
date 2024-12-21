@@ -28,7 +28,7 @@ const PastaPage = async ({ params, searchParams }: Props) => {
 
   return (
     <div className="w-[100vw] md:w-full md:ml-5">
-      <div className="flex flex-col md:flex-row items-center justify-between">
+      <div className="flex flex-col md:flex-row items-center justify-between p-2">
         <div className="flex items-center">
           <h1 className="text-3xl tracking-widest mt-2">
             {params.category[0].toUpperCase() + params.category.slice(1)} 
