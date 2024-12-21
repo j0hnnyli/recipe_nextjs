@@ -29,7 +29,7 @@ const popularCategories = [
 export default async function Home() {
   return (
     <div className="max-w-[1800px] mx-auto">
-      <div className="h-[70vh] max-h-[1000px] mx-auto relative">
+      <div className="h-[70vh] max-h-[800px] mx-auto relative">
         <Image
           src='/showcase.jpg'
           alt='showcase'
