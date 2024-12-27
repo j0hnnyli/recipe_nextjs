@@ -50,14 +50,14 @@ export const getRecipeByName = async (name: string) => {
   return recipes
 }
 
-export const getAreas = async () => {
-  const res = await fetch(`${baseUrl}/list.php?a=list`);
-  
-  if(!res.ok) throw new Error('fetching areas failed');
+export const getRecipeOfTheDay = async () => {
+  const response = await fetch(`${baseUrl}/random.php`, {cache: 'no-cache'})
 
-  const data = await res.json();
+  if(!response.ok) throw new Error('Fetching MealOfTheDay Failed');
 
-  return data;
+  const recipeOfTheDay = await response.json();
+
+  return recipeOfTheDay.meals[0].idMeal;
 }
 
 export const wait = async (time: number): Promise<void> => {
