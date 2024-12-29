@@ -58,8 +58,8 @@ const RecommendRecipes = async ({ area }: Props) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious  className="hidden lg:inline"/>
-        <CarouselNext className="hidden lg:inline"/>
+        <CarouselPrevious  className="hidden lg:flex items-center justify-center"/>
+        <CarouselNext className="hidden lg:flex items-center justify-center"/>
       </Carousel>
     </div>
   );

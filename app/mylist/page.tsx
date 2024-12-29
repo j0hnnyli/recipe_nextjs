@@ -1,9 +1,7 @@
-"use client";
-
 import { GiWok } from "react-icons/gi";
 import MyRecipeListContainer from "./MyRecipeListContainer";
 
-const RecipeList = async () => {
+const RecipeList = () => {
   return (
     <>
       <div className="">

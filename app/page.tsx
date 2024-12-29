@@ -1,7 +1,7 @@
+import RecipeOfTheDayLinkWrapper from "@/components/RecipeOfTheDayLinkWrapper";
+import RecipeOfTheDayUI from "@/components/RecipeOfTheDayUI";
 import Image from "next/image";
 import Link from 'next/link'
-import AnimateReveal from "@/components/AnimateReveal";
-import { getAreas } from "@/fetchData";
 
 const popularCategories = [
   {
@@ -40,8 +40,8 @@ export default async function Home() {
 
         <div className="absolute h-full w-full bg-black opacity-30 z-20"></div>
 
-        <div className="relative z-30 w-full h-full flex items-center justify-center text-white">
-          <div className=" flex-col flex items-center justify-center">
+        <div className="relative z-30 w-full lg:w-[90%] h-full mx-auto flex items-center justify-center">
+          <div className='flex-col flex items-center justify-center text-white'>
             <h1 className="text-9xl md:text-[100px] text-script  tracking-wider">Let&apos;s</h1>
             <h1 className="text-9xl md:text-[150px] text-script tracking-widest">Cook</h1>
             <p className="tracking-widest text-center">THE BEST RECIPES FROM ALL AROUND THE WORLD</p>
@@ -51,6 +51,10 @@ export default async function Home() {
               Explore
             </Link>
           </div>
+
+          <RecipeOfTheDayLinkWrapper>
+            <RecipeOfTheDayUI/>
+          </RecipeOfTheDayLinkWrapper>
         </div>
       </div>
       
@@ -70,7 +74,7 @@ export default async function Home() {
         <h2 className="text-xl tracking-widest text-orange-500 dark:text-gray-500 font-bold">Popular Categories:</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 mt-2">
           {popularCategories.map((category) => (
-            <Link href={`/${category.title}`} key={category.title}
+            <Link href={`/${category.title}?search=''`} key={category.title}
               className="my-1 p-1 rounded-xl hover:bg-gray-400 hover:dark:bg-gray-500"
             >
               <Image

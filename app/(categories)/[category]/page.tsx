@@ -8,12 +8,13 @@ type Props = {
   params: {
     [key: string]: string;
   };
-  searchParams: string;
+  searchParams: {
+    search: string;
+  };
 };
 
-const PastaPage = async ({ params, searchParams }: Props) => {
+const CategoryPage = async ({ params, searchParams }: Props) => {
   const { meals: recipes }: { meals: Recipe[] } = await getData(params.category);
-
   const searchTerm = searchParams.search ? String(searchParams.search) : ""
 
   const filteredRecipes = recipes.filter((recipe: Recipe) => {
@@ -63,4 +64,4 @@ const PastaPage = async ({ params, searchParams }: Props) => {
   );
 };
 
-export default PastaPage;
+export default CategoryPage;

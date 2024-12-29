@@ -1,34 +1,42 @@
-'use client'
 import React from 'react'
 import { SheetClose } from "@/components/ui/sheet"
-import { useRouter } from 'next/navigation'
+import RecipeOfTheDayLinkWrapper from '../RecipeOfTheDayLinkWrapper'
+import Link from 'next/link'
 
 const MediaMenuLinks = () => {
-  const router = useRouter()
 
   return (
     <div className='flex flex-col justify-center items-center mt-5'>
-    <SheetClose 
-      onClick={() => router.push('/')}
-      className='mb-5'
-    >
-      Home 
-    </SheetClose>
-    <SheetClose 
-      onClick={() => router.push('/beef')}
-      className='mb-5'
-    >
-      Categories
-    </SheetClose>
+      <Link href='/'>
+        <SheetClose 
+          className='mb-5'
+        >
+            Home 
+        </SheetClose>
+      </Link>
 
-    <SheetClose 
-      onClick={() => router.push('/mylist')}
-      className='mb-5'
-    >
-      My Recipes
-    </SheetClose>
+      <Link href='/beef'>
+        <SheetClose 
+          className='mb-5'
+        >
+            Categories
+        </SheetClose>
+      </Link>
 
-  </div>
+      <Link href='/mylist'>
+        <SheetClose 
+          className='mb-5'
+        >
+            My Recipes
+        </SheetClose>
+      </Link>
+      
+      <RecipeOfTheDayLinkWrapper>
+        <SheetClose>
+            <p className='text-orange-500 animate-bounce'>Recipe of The Day</p>
+        </SheetClose>
+      </RecipeOfTheDayLinkWrapper>
+    </div>
   )
 }
 

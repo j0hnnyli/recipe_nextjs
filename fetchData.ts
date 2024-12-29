@@ -1,3 +1,5 @@
+import { redis } from "./lib/redis"
+
 const baseUrl = 'https://www.themealdb.com/api/json/v1/1/'
 
 export const getData = async (category: string) => {
@@ -50,14 +52,33 @@ export const getRecipeByName = async (name: string) => {
   return recipes
 }
 
-export const getAreas = async () => {
-  const res = await fetch(`${baseUrl}/list.php?a=list`);
+export const getRecipeOfTheDay = async () => {
+  const today = new Date().toISOString().split('T')[0]
+  const lastRan = await redis.hGet('recipeofday', 'lastRan')
+  const recipeOfDayId = await redis.hGet('recipeofday', 'recipeOfDayId')
+
+  if(today === lastRan){
+    return recipeOfDayId;
+  }
+
+  try{
+    const response = await fetch(`${baseUrl}/random.php`, {cache: 'no-cache'})
   
-  if(!res.ok) throw new Error('fetching areas failed');
-
-  const data = await res.json();
-
-  return data;
+    if(!response.ok) throw new Error('Fetching MealOfTheDay Failed');
+  
+    const recipeOfTheDay = await response.json();
+  
+    await redis.hSet('recipeofday', {
+      'lastRan' : today,
+      'recipeOfDayId' : recipeOfTheDay.meals[0].idMeal
+    })
+  
+    return recipeOfTheDay.meals[0].idMeal;
+  }catch(err){
+    if(err instanceof Error){
+      throw new Error(err.message)
+    }
+  }
 }
 
 export const wait = async (time: number): Promise<void> => {

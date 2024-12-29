@@ -23,11 +23,7 @@ const SearchBar = ({ category }: Props) =>  {
   const [query] = useDebounce(value, 400)
 
   useEffect(() => {
-    if(!query){
-      router.push(`/${category}`)
-    }else{
-      router.push(`/${category}?search=${value.toLowerCase()}`)    
-    }
+    router.push(`/${category}?search=${value.toLowerCase()}`)    
   }, [query, router, value, category])
 
   return (

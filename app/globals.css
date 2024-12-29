@@ -6,6 +6,7 @@
   font-family: var(--text-script);
 }
 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
