@@ -6,10 +6,6 @@
   font-family: var(--text-script);
 }
 
-.flip-card {
-  transform: rotateX(180deg);
-  transform-style: preserve-3d; 
-}
 
 @layer base {
   :root {
