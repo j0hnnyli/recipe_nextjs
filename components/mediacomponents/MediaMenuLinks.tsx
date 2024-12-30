@@ -1,6 +1,5 @@
 import React from 'react'
 import { SheetClose } from "@/components/ui/sheet"
-import RecipeOfTheDayLinkWrapper from '../RecipeOfTheDayLinkWrapper'
 import Link from 'next/link'
 
 const MediaMenuLinks = () => {
@@ -30,12 +29,6 @@ const MediaMenuLinks = () => {
             My Recipes
         </SheetClose>
       </Link>
-      
-      <RecipeOfTheDayLinkWrapper>
-        <SheetClose>
-            <p className='text-orange-500 animate-bounce'>Recipe of The Day</p>
-        </SheetClose>
-      </RecipeOfTheDayLinkWrapper>
     </div>
   )
 }
